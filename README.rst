@@ -9,3 +9,4 @@ Simple Reddit Bot using PRAW to add a countdown to the Sidebar
 
 *Note, ```reddit_user``` has to be able to edit the Sidebar.*
 - Run the bot.
+  
