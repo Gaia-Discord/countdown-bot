@@ -10,6 +10,6 @@ Setup
 - *If you change the* :code:`NAME`, *change* :code:`content_1 = content(NAME)` *too*.
 - Set the ```client_id```, ```client_secret```, ```reddit_user```, ```reddit_pass```, ```user_agent```, ```target_sub```
 
-*Note, :code:`reddit_user` has to be able to edit the Sidebar.*
+*Note*, :code:`reddit_user` *has to be able to edit the Sidebar.*
 - Run the bot.
   
