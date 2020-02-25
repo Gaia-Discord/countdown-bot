@@ -18,24 +18,24 @@ reddit = praw.Reddit(client_id=client_id,
 sub = reddit.subreddit(target_sub)
 mod = sub.mod
 
-then = datetime(2020, 2, 29, 18, 30, 00) # Countdown Date [YEAR, MONTH, DAY, HOUR, MINUTE, SECOND]
+then = datetime(2020, 2, 29, 9, 30, 00) # Countdown Date [YEAR, MONTH, DAY, HOUR, MINUTE, SECOND] [PST Timezone]
 
-counting = -2
-while counting < -1:
+count = -2
+while count < -1:
     now = datetime.now()
     duration = then - now
-    time1 = duration.total_seconds()
+    timeS = duration.total_seconds()
 
-    day = round(time1 // (24 * 3600))
-    time1 = time1 % (24 * 3600)
-    hour = round(time1 // 3600)
-    time1 %= 3600
-    minutes = round(time1 // 60)
-    time1 %= 60
-    seconds = time1
+    day = round(timeS // (24 * 3600))
+    timeS = timeS % (24 * 3600)
+    hour = round(timeS // 3600)
+    timeS %= 3600
+    minutes = round(timeS // 60)
+    timeS %= 60
+    seconds = timeS
     
     new_content = '**[{}](#DAYS) DAYS** **[{}](#HOURS) HOURS** **[{}](#MINUTES) MINUTES**'.format(day, hour, minutes) # Sidebar Content for Countdown
 
     mod.update(description='{}'.format(new_content)) # Update Sidebar
 
-    time.sleep(10)
+    time.sleep(10) # Run every 10 seconds
