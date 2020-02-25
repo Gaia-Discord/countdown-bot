@@ -36,11 +36,11 @@ def content(t): # Countdown Content Function
     side_minutes = re.sub(r"\*\*\[(\s*|\d+)\]\(#MINUTES\) MINUTES\*\*", '**[{}](#MINUTES) MINUTES**'.format(minutes), side_hours)
     return content
 
-PAX = datetime(2020, 2, 29, 9, 30, 00) # Countdown Date [YEAR, MONTH, DAY, HOUR, MINUTE, SECOND] [PST Timezone]
+NAME = datetime(2020, 2, 29, 9, 30, 00) # Countdown Date [YEAR, MONTH, DAY, HOUR, MINUTE, SECOND] [PST Timezone]
 
 count = -2
 while count < -1:
-    content_1 = content(PAX)
+    content_1 = content(NAME)
     print(content_1)
     mod.update(description='{}'.format(side_minutes)) # Update Sidebar
     time.sleep(10) # Repeat Every 10 Seconds
