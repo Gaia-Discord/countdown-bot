@@ -31,7 +31,6 @@ def content(t): # Countdown Content Function
     minutes = round((time1 // 60) + 1) # +1 because seconds are hidden
     time1 %= 60
     seconds = time1
-
     side_days = re.sub(r"\*\*\[(\s*|\d+)\]\(#DAYS\) DAYS\*\*", '**[{}](#DAYS) DAYS**'.format(days), sidebar_contents)
     side_hours = re.sub(r"\*\*\[(\s*|\d+)\]\(#HOURS\) HOURS\*\*", '**[{}](#HOURS) HOURS**'.format(hours), side_days)
     side_minutes = re.sub(r"\*\*\[(\s*|\d+)\]\(#MINUTES\) MINUTES\*\*", '**[{}](#MINUTES) MINUTES**'.format(minutes), side_hours)
