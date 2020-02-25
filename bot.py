@@ -3,12 +3,18 @@ from datetime import datetime
 import time
 import re
 
-client_id = '' 
-client_secret = ''
-reddit_user = ''
-reddit_pass = ''
-user_agent = ''
-target_sub = '' # Subreddit
+# How to set up a Bot:
+# - Go to reddit.com/prefs/apps
+# - Create a new Application
+# - Set a name, select 'script', set the redirect uri to a link to your subreddit.
+# - Click 'create app'
+
+client_id = ''     # 14 character string under your App Name
+client_secret = '' # Apps Secret
+reddit_user = ''   # Your username
+reddit_pass = ''   # Your password
+user_agent = ''    # Identifier for Reddit, example: CountdownBot (by u/AOD_Saenai) 
+target_sub = ''    # The Subreddit 
 
 reddit = praw.Reddit(client_id=client_id,
                      client_secret=client_secret,
@@ -39,6 +45,7 @@ def content(t): # Countdown Content Function
 
 NAME = datetime(2020, 2, 29, 9, 30, 00) # Countdown Date [YEAR, MONTH, DAY, HOUR, MINUTE, SECOND] [PST Timezone]
 
+# Countdown Loop
 count = -2
 while count < -1:
     content_1 = content(NAME)
